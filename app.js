@@ -1,6 +1,6 @@
 const express = require("express");
+const cors = require('cors');
 const jsonfile = require("jsonfile");
-const cors = require('cors')
 const ordersFile = "./orders.json";
 const paymentsFile = "./payments.json";
 const pricesFile = "./prices.json";
@@ -8,10 +8,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors())
-app.options('*', cors());
 
 
-app.get("/orders", function (req, res) {
+app.get("/orders", function (req, res, next) {
     //res.send("Hello World");
     jsonfile.readFile(ordersFile, function (err, obj) {
         if (err) res.send(err);
