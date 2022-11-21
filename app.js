@@ -7,8 +7,10 @@ const pricesFile = "./prices.json";
 const port = process.env.PORT || 3000;
 const app = express();
 
+app.use(cors())
+app.options('*', cors());
 
-app.options('*', cors())
+
 app.get("/orders", function (req, res, next) {
     //res.send("Hello World");
     jsonfile.readFile(ordersFile, function (err, obj) {
@@ -16,14 +18,14 @@ app.get("/orders", function (req, res, next) {
         res.send(obj);
     });
 });
-app.options('*', cors())
+
 app.get("/payments", function (req,res) {
     jsonfile.readFile(paymentsFile, function (err, obj) {
         if (err) res.send(err);
         res.send(obj);
     });
 });
-app.options('*', cors())
+
 app.get("/prices", function (req,res) {
     jsonfile.readFile(pricesFile, function (err, obj) {
         if (err) res.send(err);
