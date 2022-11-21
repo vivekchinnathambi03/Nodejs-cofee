@@ -7,7 +7,8 @@ const pricesFile = "./prices.json";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.options('*', cors())
+app.use(cors())
+
 
 app.get("/orders", function (req, res) {
     //res.send("Hello World");
@@ -31,4 +32,5 @@ app.get("/prices", function (req,res) {
     });
 });
 
-app.listen(port);
+
+app.listen(port)
