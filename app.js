@@ -4,6 +4,7 @@ const ordersFile = "./orders.json";
 const paymentsFile = "./payments.json";
 const pricesFile = "./prices.json";
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.get("/orders", function (req, res) {
     //res.send("Hello World");
@@ -27,4 +28,4 @@ app.get("/prices", function (req,res) {
     });
 });
 
-app.listen(3000);
+app.listen(port);
