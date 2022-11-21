@@ -3,8 +3,9 @@ const jsonfile = require("jsonfile");
 const ordersFile = "./orders.json";
 const paymentsFile = "./payments.json";
 const pricesFile = "./prices.json";
-const app = express();
 const port = process.env.PORT || 3000;
+const app = express();
+
 
 app.get("/orders", function (req, res) {
     //res.send("Hello World");
