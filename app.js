@@ -13,14 +13,14 @@ app.get("/orders", function (req, res) {
     });
 });
 
-app.get("/payments", function (res) {
+app.get("/payments", function (req,res) {
     jsonfile.readFile(paymentsFile, function (err, obj) {
         if (err) res.send(err);
         res.send(obj);
     });
 });
 
-app.get("/prices", function (res) {
+app.get("/prices", function (req,res) {
     jsonfile.readFile(pricesFile, function (err, obj) {
         if (err) res.send(err);
         res.send(obj);
