@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors())
+app.options('*', cors());
 
 
 app.get("/orders", function (req, res, next) {
