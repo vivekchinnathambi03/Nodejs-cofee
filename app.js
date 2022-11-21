@@ -7,24 +7,7 @@ const pricesFile = "./prices.json";
 const port = process.env.PORT || 3000;
 const app = express();
 
-const corsOptions = {
-    origin: 'http://localhost:4200/',
-    optionsSuccessStatus: 200,
-    credentials: true
-
-}
-
-app.use(cors(corsOptions));
-
-
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-})
-
-
+app.options('*', cors())
 
 app.get("/orders", function (req, res) {
     //res.send("Hello World");
