@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-cofee",
+  "version": "1.0.0",
+  "description": "Backend to fetch coffee shop details",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vivek",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonfile": "^6.1.0"
+  }
+}
