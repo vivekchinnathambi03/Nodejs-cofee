@@ -13,6 +13,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.options('/*', (_, res) => {
+    res.sendStatus(200);
+});
+
 
 app.get("/orders", function (req, res) {
     //res.send("Hello World");
