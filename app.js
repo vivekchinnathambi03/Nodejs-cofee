@@ -1,5 +1,6 @@
 const express = require("express");
 const jsonfile = require("jsonfile");
+const cors = require('cors')
 const ordersFile = "./orders.json";
 const paymentsFile = "./payments.json";
 const pricesFile = "./prices.json";
@@ -28,5 +29,9 @@ app.get("/prices", function (req,res) {
         res.send(obj);
     });
 });
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.listen(port);
