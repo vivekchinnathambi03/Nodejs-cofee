@@ -7,7 +7,7 @@ const pricesFile = "./prices.json";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.options('http://localhost:4200/', cors())
+app.options('http://localhost:4200', cors())
 
 app.get("/orders", function (req, res, next) {
     jsonfile.readFile(ordersFile, function (err, obj) {
