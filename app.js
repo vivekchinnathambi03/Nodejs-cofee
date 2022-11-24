@@ -7,13 +7,9 @@ const pricesFile = "./prices.json";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(cors({
-    origin: ['http://localhost:4200/']
-}));
-
+app.options('http://localhost:4200/', cors())
 
 app.get("/orders", function (req, res, next) {
-    //res.send("Hello World");
     jsonfile.readFile(ordersFile, function (err, obj) {
         if (err) res.send(err);
         res.send(obj);
